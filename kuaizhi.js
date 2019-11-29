@@ -14,11 +14,11 @@ if(url.indexOf(path1) != -1) {
 }
 
 if(url.indexOf(path2) != -1) {
-	obj.userinfo.experiencer = 0;
-	obj.userinfo.vip = 1;
-	obj.userinfo.vip_expired_at = 4070880000;
-	obj.userinfo.vip_expired = false;
-	obj.userinfo.vip_if_gift = false;
+	obj.userInfo.experiencer = 0;
+	obj.userInfo.vip = 1;
+	obj.userInfo.vip_expired_at = "2099-11-11";
+	obj.userInfo.vip_expired = false;
+	obj.userInfo.vip_if_gift = false;
 }
 
 $done({body: JSON.stringify(obj)});
