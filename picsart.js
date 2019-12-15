@@ -11,7 +11,7 @@ if(url.indexOf(path1) != -1) {
 }
 if(url.indexOf(path2) != -1) {
 	obj.response.status = "SUBSCRIPTION_PURCHASED"
-	obj.response.expire_date = 4070880000
+	obj.response.expire_date = 4070880000000
 	obj.response.subscription_id = "com.picsart.studio.subscription_yearly"
 	obj.response.is_trial = false
 }
