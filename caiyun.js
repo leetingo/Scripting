@@ -1,20 +1,19 @@
-//https:\/\/api\.interpreter\.caiyunai\.com\/v1\/(user|doc\/.*\/(download\/info|free))
+//https:\/\/api\.interpreter\.caiyunai\.com\/v1\/(user|doc\/.*\/download\/info)
 
 const path1 = "/download/info";
-const path2 = "/free";
-const path3 = "/user";
+const path2 = "/user";
 
 const url = $request.url;
 var obj = JSON.parse($response.body);
 
 if (url.indexOf(path1) != -1) {
-    obj.pay_detail.free_download_times_remain = 6;
-
+    obj = {
+        "rc": 0,
+        "pay_type": 4,
+        "is_allow": true
+    }
 }
 if (url.indexOf(path2) != -1) {
-    obj.free_download_times_remain = 6;
-}
-if (url.indexOf(path3) != -1) {
     obj = {
         "point": {},
         "user": {
