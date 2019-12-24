@@ -3,9 +3,9 @@ const path2 = "/user";
 const path3 = "/free";
 
 const url = $request.url;
-var obj = JSON.parse($response.body);
+let obj = JSON.parse($response.body);
 
-if (url.indexOf(path1) != -1) {
+if (url.indexOf(path1) != -1 && obj.is_allow == false) {
 	obj.pay_detail.free_download_times_remain = 6;
 }
 if (url.indexOf(path2) != -1) {
