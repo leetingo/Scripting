@@ -14,7 +14,7 @@ if ($request.headers) {
         var sn = reSn.exec(url)[1];
         var EndAd = {
         url: 'https://api.gamer.com.tw/mobile_app/anime/v1/stat_ad.php?ad=end&schedule=0&sn=' + sn,
-		method = 'GET',
+		method : 'GET',
         headers: {
         "Cookie": $prefs.valueForKey("CookieDHF"),
         "User-Agent": $prefs.valueForKey("UADHF"),
@@ -55,7 +55,7 @@ $done({})
     		       var snn = obj['video']['video_sn']
                var StartAd = {
                url: 'https://api.gamer.com.tw/mobile_app/anime/v1/stat_ad.php?ad=&schedule=0&sn=' + snn,
-			   method = 'GET',
+			   method : 'GET',
                headers: {
                "Cookie": $prefs.valueForKey("CookieDHF"),
                "User-Agent": $prefs.valueForKey("UADHF"),
