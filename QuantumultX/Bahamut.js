@@ -31,14 +31,13 @@ if ($request.headers) {
                                 $done()
                             }
                         });
-                    },
-                    reason => {
+                    }
+				},	reason => {
                         if (reason.error) {
                             console.log(reason.error)
                             $done()
                         }
                     });
-                }
                 }
             }, reason => {
                 if (reason.error) {
@@ -73,14 +72,13 @@ if ($request.headers) {
                                 $done()
                             }
                         });
-                    },
-                    reason => {
+                    }
+				},	reason => {
                         if (reason.error) {
                             console.log(reason.error)
                             $done()
                         }
                     });
-                }
                 }
             }, reason => {
                 if (reason.error) {
