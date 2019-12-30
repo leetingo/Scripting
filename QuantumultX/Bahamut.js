@@ -25,25 +25,22 @@ if ($request.headers) {
             if (response.status == 200) {
                 $task.fetch(EndAd).then(response => {
                     if (response.status == 200) {
-                        $task.fetch(EndAd).then(reason => {
-                            if (reason.error) {
-                                console.log(error)
-                                $done()
-                            }
+                        $task.fetch(EndAd).then(response => {
+                            if (response.status == 200)
+                                $notify("发送结束AD3成功", snn, "Video响应");
+                        }, reason => {
+                            console.log(reason.error)
+                            $done()
                         });
                     }
                 }, reason => {
-                    if (reason.error) {
-                        console.log(reason.error)
-                        $done()
-                    }
+                    console.log(reason.error)
+                    $done()
                 });
             }
         }, reason => {
-            if (reason.error) {
-                console.log(reason.error)
-                $done()
-            }
+            console.log(reason.error)
+            $done()
         });
     }
     $done({})
@@ -64,28 +61,23 @@ if ($request.headers) {
             if (response.status == 200) {
                 $task.fetch(StartAd).then(response => {
                     if (response.status == 200) {
-                        $task.fetch(StartAd).then(reason => {
-                            if (reason.error) {
-                                console.log(error)
-                                $done()
-                            }
-                            else {
-                                setTimeout(function () { $done({}) }, 500)
-                            }
+                        $task.fetch(StartAd).then(response => {
+                            if (response.status == 200)
+                                $notify("发送开始AD3成功", snn, "Video响应");
+                            setTimeout(function () { $done({}) }, 500)
+                        }, reason => {
+                            console.log(reason.error)
+                            $done()
                         });
                     }
                 }, reason => {
-                    if (reason.error) {
-                        console.log(reason.error)
-                        $done()
-                    }
+                    console.log(reason.error)
+                    $done()
                 });
             }
         }, reason => {
-            if (reason.error) {
-                console.log(reason.error)
-                $done()
-            }
+            console.log(reason.error)
+            $done()
         });
         //  $done({})
     }
