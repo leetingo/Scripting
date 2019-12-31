@@ -6,7 +6,7 @@ let myRequest = {
     url: `https://space.bilibili.com/ajax/member/getSubmitVideos?mid=${mid}&pagesize=10&order=stow`,
     method: "GET"
 }
-$task.fetch(myRequst).then(response => {
+$task.fetch(myRequest).then(response => {
     console.log(response.body)
     body = JSON.parse(response.body)
     let info = ""
