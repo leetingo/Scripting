@@ -21,7 +21,7 @@ function sign() {
         url.headers['Referer'] = 'https://app.bupt.edu.cn/ncov/wap/default/index'
         url.headers['Accept'] = 'application/json, text/javascript, */*; q=0.01'
         url.headers['User-Agent'] = 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.10(0x17000a21) NetType/WIFI Language/zh_CN'
-        //chavy.log(url.body)
+        chavy.log(url.body)
         
         chavy.post(url, (error, response, data) => {
         let result = JSON.parse(data)
@@ -80,7 +80,7 @@ function getsigninfo(cb) {
         data['area'] = `${geo.addressComponent.province} ${geo.addressComponent.city} ${geo.addressComponent.district}`
         data.province = geo.addressComponent.province
         data.city = geo.addressComponent.city
-        cb(JSON.stringify(data))
+        cb(data)
     })
 }
 function init() {
