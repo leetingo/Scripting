@@ -20,35 +20,37 @@ function sign() {
         url.headers['Origin'] = 'https://app.bupt.edu.cn'
         url.headers['Referer'] = 'https://app.bupt.edu.cn/ncov/wap/default/index'
         url.headers['Accept'] = 'application/json, text/javascript, */*; q=0.01'
+        url.headers['Host'] = 'app.bupt.edu.cn'
+        url.headers['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8'
+        url.headers['X-Requested-With'] = 'XMLHttpRequest'
         url.headers['User-Agent'] = 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.10(0x17000a21) NetType/WIFI Language/zh_CN'
         chavy.log(url.body)
-        
+
         chavy.post(url, (error, response, data) => {
-        let result = JSON.parse(data)
-        let title = `${cookieName}`
-        // 签到成功
-        if (result && result.e == 0) {
-        let subTitle = `签到结果: 成功`
-        let detail = `说明: ${result.m}`
-        chavy.msg(title, subTitle, detail)
-        }
-        // 签到重复
-        else if (result && result.e == 1) {
-        let subTitle = `签到结果: 成功 (重复签到)`
-        let detail = `说明: ${result.m}`
-        chavy.msg(title, subTitle, detail)
-        }
-        // 签到失败
-        else {
-        let subTitle = `签到结果: 失败`
-        let detail = `说明: ${result.m}`
-        chavy.msg(title, subTitle, detail)
-        }
-        chavy.log(`${cookieName}, data: ${data}`)
+            let result = JSON.parse(data)
+            let title = `${cookieName}`
+            // 签到成功
+            if (result && result.e == 0) {
+                let subTitle = `签到结果: 成功`
+                let detail = `说明: ${result.m}`
+                chavy.msg(title, subTitle, detail)
+            }
+            // 签到重复
+            else if (result && result.e == 1) {
+                let subTitle = `签到结果: 成功 (重复签到)`
+                let detail = `说明: ${result.m}`
+                chavy.msg(title, subTitle, detail)
+            }
+            // 签到失败
+            else {
+                let subTitle = `签到结果: 失败`
+                let detail = `说明: ${result.m}`
+                chavy.msg(title, subTitle, detail)
+            }
+            chavy.log(`${cookieName}, data: ${data}`)
         })
-         
     })
-        chavy.done()
+    chavy.done()
 }
 function getsigninfo(cb) {
     let url = {
@@ -70,17 +72,41 @@ function getsigninfo(cb) {
         re = /{.*}/g
         data = data.match(re)[0]
         data = JSON.parse(data)
-        delete data.jrdqtlqk
-        delete data.jrdqjcqk
+
+        data.jhfjrq = ''
+        data.jhfjjtgj = ''
+        data.jhfjhbcc = ''
         data.ismoved = 0
         data.sfxk = 0
         data.xkqq = ''
+        if (data.sfjcbh == 0) {
+            data.jcbhlx = '';
+            data.jcbhrq = '';
+        }
+
+        if (data.sfcyglq == 0) {
+            data.gllx = '';
+            data.glksrq = '';
+        }
+
+        if (data.sfcxtz == 0) {
+            data.sfyyjc = 0;
+        }
+        if (data.sfyyjc == 0) {
+            data.jcjg = '';
+        }
+
+        if (data.sfcxzysx == 0) {
+            data.qksm = '';
+        }
         let geo = JSON.parse(data.geo_api_info)
         data.address = geo.formattedAddress
-        data['area'] = `${geo.addressComponent.province} ${geo.addressComponent.city} ${geo.addressComponent.district}`
+        data.area = `${geo.addressComponent.province} ${geo.addressComponent.city} ${geo.addressComponent.district}`
         data.province = geo.addressComponent.province
         data.city = geo.addressComponent.city
-        cb(data)
+
+        const formBody = Object.keys(data).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&')
+        cb(formBody)
     })
 }
 function init() {
