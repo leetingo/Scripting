@@ -35,12 +35,6 @@ function sign() {
                 let detail = `说明: ${result.m}`
                 chavy.msg(title, subTitle, detail)
             }
-            // 签到重复
-            else if (result && result.e == 1) {
-                let subTitle = `签到结果: 成功 (重复签到)`
-                let detail = `说明: ${result.m}`
-                chavy.msg(title, subTitle, detail)
-            }
             // 签到失败
             else {
                 let subTitle = `签到结果: 失败`
@@ -72,41 +66,20 @@ function getsigninfo(cb) {
         re = /{.*}/g
         data = data.match(re)[0]
         data = JSON.parse(data)
+        delete data.jrdqtlqk
+        delete data.jrdqjcqk
 
-        data.jhfjrq = ''
-        data.jhfjjtgj = ''
-        data.jhfjhbcc = ''
         data.ismoved = 0
         data.sfxk = 0
-        data.xkqq = ''
-        if (data.sfjcbh == 0) {
-            data.jcbhlx = '';
-            data.jcbhrq = '';
-        }
-
-        if (data.sfcyglq == 0) {
-            data.gllx = '';
-            data.glksrq = '';
-        }
-
-        if (data.sfcxtz == 0) {
-            data.sfyyjc = 0;
-        }
-        if (data.sfyyjc == 0) {
-            data.jcjg = '';
-        }
-
-        if (data.sfcxzysx == 0) {
-            data.qksm = '';
-        }
-        let geo = JSON.parse(data.geo_api_info)
+        const geo = JSON.parse(data.geo_api_info)
         data.address = geo.formattedAddress
         data.area = `${geo.addressComponent.province} ${geo.addressComponent.city} ${geo.addressComponent.district}`
         data.province = geo.addressComponent.province
         data.city = geo.addressComponent.city
 
         const formBody = Object.keys(data).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&')
-        cb(formBody)
+        re = /%20/g
+        cb(formBody.replace(re, '+'))
     })
 }
 function init() {
