@@ -61,25 +61,14 @@ function getsigninfo(cb) {
     url.headers['Connection'] = 'keep-alive'
 
     chavy.get(url, (error, response, data) => {
-        let re = /var def = {.*};/g
+        let re = /oldInfo: {.*}/g
         data = data.match(re)[0]
         re = /{.*}/g
         data = data.match(re)[0]
         data = JSON.parse(data)
-        delete data.jrdqtlqk
-        delete data.jrdqjcqk
-
-        data.ismoved = 0
-        data.sfxk = 0
-        const geo = JSON.parse(data.geo_api_info)
-        data.address = geo.formattedAddress
-        data.area = `${geo.addressComponent.province} ${geo.addressComponent.city} ${geo.addressComponent.district}`
-        data.province = geo.addressComponent.province
-        data.city = geo.addressComponent.city
-
-        const formBody = Object.keys(data).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&')
         re = /%20/g
-        cb(formBody.replace(re, '+'))
+        const formBody = Object.keys(data).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&').replace(re, '+')
+        cb(formBody)
     })
 }
 function init() {
