@@ -1,2 +1,2 @@
-# Scrips
+# Scripts
 Surge/QX Scripts
