@@ -12,7 +12,7 @@ BaiduCloud.js = requires-body=1,script-path=https://raw.githubusercontent.com/Ti
 # 微信广告
 WeChat.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/WeChat.js,type=http-response,pattern=^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad
 # YouTube广告
-YouTube.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/YouTube.js,type=http-request,pattern=^https://[\s\S]*\.googlevideo\.com/.*&(oad|ctier)
+YouTube.js = script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/YouTube.js,type=http-request,pattern=^https://[\s\S]*\.googlevideo\.com/.*&(oad|ctier)
 # bilibili开启1080+
 bilibilifj.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/bilibilifj.js,type=http-response,pattern=^https?:\/\/api\.bilibili\.com\/pgc\/player\/api\/playurl
 # 彩云天气
