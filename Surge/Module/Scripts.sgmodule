@@ -10,9 +10,9 @@ ulike.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLe
 # 百度云
 BaiduCloud.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/BaiduCloud.js,type=http-response,pattern=https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user
 # 微信广告
-WeChat.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/WeChat.js,type=http-response,pattern=^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad
+WeChat.js = script-path=https://Choler.github.io/Surge/Script/WeChat.js,type=http-request,pattern=^https://mp\.weixin\.qq\.com/mp/getappmsgad
 # YouTube广告
-YouTube.js = script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/YouTube.js,type=http-request,pattern=^https://[\s\S]*\.googlevideo\.com/.*&(oad|ctier)
+YouTube.js = script-path=https://Choler.github.io/Surge/Script/YouTube.js,type=http-request,pattern=^https://[\s\S]*\.googlevideo\.com/.*&(oad|ctier)
 # bilibili开启1080+
 bilibilifj.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/bilibilifj.js,type=http-response,pattern=^https?:\/\/api\.bilibili\.com\/pgc\/player\/api\/playurl
 # 彩云天气
@@ -38,30 +38,12 @@ caiyun.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoL
 pdfviewer.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/pdfviewer.js,type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/v1\/(receipts|subscribers\/_([a-z]|[0-9])*$)
 # pdfexpert
 Pdfexpert.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/Pdfexpert.js,type=http-response,pattern=https:\/\/license\.pdfexpert\.com\/api\/.*\/(?:documents|pdfexpert6)\/subscription\/(refresh$|check$)
-# jd历史价格
-jd_price.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/jd_price.js,type=http-response,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig)
 # 酷我音乐
 kuwo.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/kuwo.js,type=http-response,pattern=^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice)
 # vsco
 vsco.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/vsco.js,type=http-response,pattern=^https?:\/\/vsco\.co\/api\/subscriptions\/2.1\/user-subscriptions\/
-# 知乎去广告
-zhihu_feed.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/zhihu_feed.js,type=http-response,pattern=https://api.zhihu.com/moments\?(action|feed_type)
-zhihu_recommend.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/zhihu_recommend.js,type=http-response,pattern=https://api.zhihu.com/topstory/recommend
-zhihu_answer.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/zhihu_answer.js,type=http-response,pattern=https://api.zhihu.com/v4/questions
-zhihu_people.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/zhihu_people.js,type=http-response,pattern=https://api.zhihu.com/people/
-# bilibili去广告
-bilibili_space.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/bilibili_space.js,script-update-interval=0,type=http-response,pattern=https://app.bilibili.com/x/v2/space\?access_key
-bilibili_tab.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/bilibili_tab.js,type=http-response,pattern=https://app.bilibili.com/x/resource/show/tab\?access_key
-bilibili_feed.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/bilibili_feed.js,type=http-response,pattern=https://app.bilibili.com/x/v2/feed/index\?access_key
-bilibili_account.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/bilibili_account.js,type=http-response,pattern=https://app.bilibili.com/x/v2/account/mine\?access_key
-bilibili_view_relate.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/bilibili_view_relate.js,type=http-response,pattern=https://app.bilibili.com/x/v2/view\?access_key
-bilibili_reply.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/bilibili_reply.js,type=http-response,pattern=https://api.bilibili.com/x/v2/reply/main\?access_key
-bilibili_live.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/bilibili_live.js,type=http-response,pattern=https://api.live.bilibili.com/xlive/app-room/v1/index/getInfoByRoom\?access_key
 # testflight
 testflight_view.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/testflight_view.js,type=http-response,pattern=https://testflight.apple.com/v3/accounts/.*/ru/
-# 微博广告
-wb_launch.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/wb_launch.js,type=http-response,pattern=^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua)
-wb_ad.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/wb_ad.js,type=http-response,pattern=^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|\!/photos/pic_recommend_status)
 # 网易蜗牛读书
 snailreading.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/snailreading.js,type=http-response,pattern=^https?:\/\/p\.du\.163\.com\/gain\/readtime\/info\.json
 # Lightroom
@@ -70,4 +52,4 @@ Lightroom.js = requires-body=1,script-path=https://raw.githubusercontent.com/Tin
 CamScanner.js = requires-body=1,script-path=https://raw.githubusercontent.com/TingoLee/Scripting/master/CamScanner.js,type=http-response,pattern=https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\?
 
 [MITM]
-hostname = %APPEND% api.bilibili.com, app.bilibili.com, api.live.bilibili.com, biz.caiyunapp.com, api.meiease.cn, lcs-mobile-cops.adobe.io, api.gamer.com.tw, app.xunjiepdf.com, backend.getdrafts.com, buy.itunes.apple.com, pocketlists.com, api.interpreter.caiyunai.com, api.revenuecat.com, license.pdfexpert.com, api.m.jd.com, vip1.kuwo.cn, vsco.co, api.zhihu.com, testflight.apple.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, p.du.163.com, photos.adobe.io, api-cs.intsig.net, api.intsig.net, *.googlevideo.com, mp.weixin.qq.com, commerce-api.faceu.mobi, pan.baidu.com, www.xmind.cn
+hostname = %APPEND% api.bilibili.com, biz.caiyunapp.com, api.meiease.cn, lcs-mobile-cops.adobe.io, api.gamer.com.tw, app.xunjiepdf.com, backend.getdrafts.com, buy.itunes.apple.com, pocketlists.com, api.interpreter.caiyunai.com, api.revenuecat.com, license.pdfexpert.com, vip1.kuwo.cn, vsco.co, testflight.apple.com, p.du.163.com, photos.adobe.io, api-cs.intsig.net, api.intsig.net, *.googlevideo.com, mp.weixin.qq.com, commerce-api.faceu.mobi, pan.baidu.com, www.xmind.cn
