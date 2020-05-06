@@ -1,6 +1,5 @@
 const chavy = init()
-const cookieVal = $request.headers['Cookie']
-obj = {
+let obj = {
     "result": 100
 }
 obj.elapsed = randomNum(200, 1000)
@@ -8,9 +7,10 @@ obj.elapsed = randomNum(200, 1000)
 let url = {
     url: $request.url,
     headers: {
-        Cookie: $request.headers['Cookie']
+        Cookie: $request.headers['Cookie'],
+		"Content-Type": "application/json"
     },
-    body: obj
+    body: JSON.stringify(obj)
 }
 
 chavy.put(url, (error, response, data) => { })
