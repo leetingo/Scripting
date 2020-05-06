@@ -2,7 +2,7 @@ const chavy = init()
 let obj = {
     "result": 100
 }
-obj.elapsed = randomNum(200, 1000)
+obj.elapsed = randomNum(30, 200)
 
 let url = {
     url: $request.url,
