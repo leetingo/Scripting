@@ -1,6 +1,6 @@
 let obj = JSON.parse($request.body);
 if($request.method == "PUT") {
-	obj.elapsed = randomNum(60, 120);
+	obj.elapsed = randomNum(30, 60);
 	obj.result = 100;
 }
 $done({body: JSON.stringify(obj)});

@@ -66,13 +66,6 @@ function getsigninfo(cb) {
         re = /{.*}/g
         data = data.match(re)[0]
         data = JSON.parse(data)
-		data.sfxk = 0
-		data.xkqq = ''
-		data.gwszdd = ''
-		data.sfyqjzgc = ''
-		data.jrsfqzys = ''
-		data.jrsfqzfy = ''
-		data.szsqsfybl = 0
         re = /%20/g
         const formBody = Object.keys(data).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&').replace(re, '+')
         cb(formBody)

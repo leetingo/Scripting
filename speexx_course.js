@@ -1,19 +1,21 @@
 const chavy = init()
-let obj = {
-    "result": 100
-}
-obj.elapsed = randomNum(200, 1000)
+if($request.method == "GET") {
+	let obj = {
+		"result": 100
+	}
+	obj.elapsed = randomNum(30, 180)
 
-let url = {
-    url: $request.url,
-    headers: {
-        Cookie: $request.headers['Cookie'],
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify(obj)
-}
+	let url = {
+		url: $request.url,
+		headers: {
+			Cookie: $request.headers['Cookie'],
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify(obj)
+	}
 
-chavy.put(url, (error, response, data) => { })
+	chavy.put(url, (error, response, data) => { })
+}
 chavy.done()
 
 function init() {
