@@ -7,8 +7,6 @@ let obj = JSON.parse($response.body);
 
 if (url.indexOf(path1) != -1 && obj.is_allow == false) {
 	obj.pay_detail.free_download_times_remain = 6;
-	obj.is_allow = true;
-	obj.rc = 0;
 }
 if (url.indexOf(path2) != -1) {
 	obj.user.biz.xy_vip_expire=4070880000;
