@@ -41,10 +41,10 @@ function sign() {
                 let detail = `说明: ${result.m}`
                 chavy.msg(title, subTitle, detail)
             }
-            chavy.log(`${cookieName}, data: ${data}`)
+			chavy.log(`${cookieName}, data: ${data}`)
+			chavy.done()
         })
     })
-    chavy.done()
 }
 function getsigninfo(cb) {
     let url = {
