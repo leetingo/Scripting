@@ -14,15 +14,8 @@ function sign() {
             },
             body: signinfo
         }
-        url.headers['Accept-Encoding'] = 'gzip, deflate, br'
-        url.headers['Accept-Language'] = 'zh-cn'
-        url.headers['Connection'] = 'keep-alive'
-        url.headers['Origin'] = 'https://app.bupt.edu.cn'
-        url.headers['Referer'] = 'https://app.bupt.edu.cn/ncov/wap/default/index'
         url.headers['Accept'] = 'application/json, text/javascript, */*; q=0.01'
-        url.headers['Host'] = 'app.bupt.edu.cn'
         url.headers['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8'
-        url.headers['X-Requested-With'] = 'XMLHttpRequest'
         url.headers['User-Agent'] = 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.10(0x17000a21) NetType/WIFI Language/zh_CN'
         chavy.log(url.body)
 
@@ -53,12 +46,8 @@ function getsigninfo(cb) {
             Cookie: cookieVal
         }
     }
-    url.headers['Host'] = 'app.bupt.edu.cn'
-    url.headers['Accept-Encoding'] = 'gzip, deflate'
-    url.headers['Accept-Language'] = 'zh-cn'
     url.headers['Accept'] = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
     url.headers['User-Agent'] = 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.10(0x17000a21) NetType/WIFI Language/zh_CN'
-    url.headers['Connection'] = 'keep-alive'
 
     chavy.get(url, (error, response, data) => {
         let re = /oldInfo: {.*}/g
