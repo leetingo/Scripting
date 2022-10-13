@@ -1,6 +1,6 @@
 const chavy = init()
 
-let adurl = $request.url.match(/(https:\/\/api\.interpreter\.caiyunai\.com\/v1\/doc\/\w+\/)download\/info/)[1]
+let adurl = $request.url.match(/(https:\/\/interpreter\.cyapi\.cn\/v1\/doc\/\w+\/)download\/info/)[1]
 adurl = adurl + "ad/view"
 
 let obj = JSON.parse($request.body)
